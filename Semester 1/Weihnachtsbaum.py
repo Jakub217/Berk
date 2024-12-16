@@ -1,7 +1,6 @@
 def zeichne_weihnachtsbaum(hoehe):
     """
     Zeichnet einen Weihnachtsbaum mit einer angegebenen Höhe.
-    :param hoehe: Höhe des Weihnachtsbaums
     """
     # Überprüfen, ob die Eingabe eine gültige Höhe ist
     if hoehe <= 0:
@@ -19,6 +18,9 @@ def zeichne_weihnachtsbaum(hoehe):
     for _ in range(2):  # Der Stamm besteht aus zwei Zeilen
         print(" " * (hoehe - 1) + "|")
 
-# Funktion aufrufen mit einer festgelegten Höhe
-hoehe = 5  # Hier kann die Höhe direkt angepasst werden
-zeichne_weihnachtsbaum(hoehe)
+# Höhe des Weihnachtsbaums abfragen
+try:
+    hoehe = int(input("Bitte die Höhe des Weihnachtsbaums eingeben: "))
+    zeichne_weihnachtsbaum(hoehe)
+except ValueError:
+    print("Bitte eine gültige Zahl eingeben.")
